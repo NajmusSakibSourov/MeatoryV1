@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meatory - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>Meatory</h2>
+      <nav>
+        <button onclick="showSection('meatData')"><i class="fa-solid fa-drumstick-bite"></i> Meat Product Data</button>
+        <button onclick="showSection('incomingLivestock')"><i class="fa-solid fa-cow"></i> Incoming Livestock/Meat</button>
+        <button onclick="showSection('stockLevels')"><i class="fa-solid fa-boxes-stacked"></i> Stock Levels</button>
+        <button onclick="showSection('expirationBatch')"><i class="fa-solid fa-calendar-xmark"></i> Expiration & Batch</button>
+        <button onclick="showSection('storageConditions')"><i class="fa-solid fa-temperature-low"></i> Storage Conditions</button>
+        <button onclick="showSection('yieldAnalysis')"><i class="fa-solid fa-chart-line"></i> Yield Analysis</button>
+        <button onclick="showSection('complianceRecall')"><i class="fa-solid fa-shield"></i> Compliance & Recall</button>
+        <button onclick="window.location.href='index.html'" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
+      </nav>
+    </aside>
+    <main class="content">
+      <section id="meatData" class="section active"></section>
+      <section id="incomingLivestock" class="section"></section>
+      <section id="stockLevels" class="section"></section>
+      <section id="expirationBatch" class="section"></section>
+      <section id="storageConditions" class="section"></section>
+      <section id="yieldAnalysis" class="section"></section>
+      <section id="complianceRecall" class="section"></section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

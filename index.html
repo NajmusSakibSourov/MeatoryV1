@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meatory - Login</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meatory – Login</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body class="login-body">
-  <div class="login-container">
-    <h1 class="app-title">Meatory</h1>
-    <form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Password" required>
-      <label><input type="checkbox"> Remember me</label>
-      <button type="submit">Log In</button>
-      <a href="#">Forgot password?</a>
+  <div class="login-card">
+    <div class="brand">🐮 Meatory</div>
+    <form onsubmit="event.preventDefault(); window.location='dashboard.html';">
+      <label>Username</label>
+      <input type="text" placeholder="Enter username" required />
+      <label>Password</label>
+      <input type="password" placeholder="Enter password" required />
+      <button class="login-btn" type="submit">
+        <span>Login</span>
+      </button>
     </form>
   </div>
 </body>

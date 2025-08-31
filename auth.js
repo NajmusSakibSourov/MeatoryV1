@@ -100,3 +100,64 @@ if (registerForm) {
   });
 }
 
+
+
+
+// -------------------- LOGIN --------------------
+async function login() {
+  const email = document.querySelector("#login-email").value.trim();
+  const password = document.querySelector("#login-password").value;
+
+  if (!email || !password) {
+    Swal.fire({
+      icon: "warning",
+      title: "Warning",
+      text: "Please enter your email and password."
+    });
+    return;
+  }
+
+  const loginBtn = document.querySelector("#loginForm .auth-btn");
+  loginBtn.disabled = true;
+
+  try {
+    const userCred = await signInWithEmailAndPassword(auth, email, password);
+
+    Swal.fire({
+      icon: "success",
+      title: "Success",
+      text: "Login Successful!"
+    }).then(() => {
+      window.location.href = "dashboard.html";
+    });
+
+  } catch (err) {
+    // Ensure err.code exists
+    let msg = "Login failed!";
+    if (err && err.code) {
+      switch (err.code) {
+        case "auth/user-not-found":
+          msg = "Email not registered. Please sign up first.";
+          break;
+        case "auth/wrong-password":
+          msg = "Incorrect password. Try again.";
+          break;
+        case "auth/invalid-email":
+          msg = "Invalid email format.";
+          break;
+        default:
+          msg = err.message || "Login failed!";
+      }
+    }
+
+    Swal.fire({
+      icon: "error",
+      title: "Login Failed",
+      text: msg
+    });
+  } finally {
+    loginBtn.disabled = false;
+  }
+}
+
+window.login = login;

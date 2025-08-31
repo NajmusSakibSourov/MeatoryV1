@@ -162,16 +162,44 @@ function renderSection(id){
       html += `<input placeholder="${h}" aria-label="${h}" />`;
     }
   });
-  html += `<button type="submit">Save</button></form>`;
+  html += `<button type="submit" id="${id}-save-btn">Save</button></form>`;
 
-  // Table
-  html += `<div class="table-wrap"><table id="${id}-table"><thead><tr>`;
-  cfg.headers.forEach(h=>{ html += `<th>${h}</th>`; });
-  html += `</tr></thead><tbody>`;
-  cfg.rows.forEach((row,idx)=>{
-    html += rowHTML(id,row,idx);
+// Table
+html += `<div class="table-wrap"><table id="${id}-table"><thead><tr>`;
+cfg.headers.forEach(h => { html += `<th>${h}</th>`; });
+html += `</tr></thead><tbody>`;
+cfg.rows.forEach((row, idx) => {
+  html += rowHTML(id, row, idx);
+});
+html += `</tbody></table></div></div>`;
+
+// After injecting HTML into DOM, add validation
+setTimeout(() => {
+  const saveBtn = document.getElementById(`${id}-save-btn`);
+  saveBtn.addEventListener("click", function (e) {
+    const form = saveBtn.closest("form");
+    const inputs = form.querySelectorAll("input, select, textarea");
+    let allFilled = true;
+
+    inputs.forEach(input => {
+      if (!input.value.trim()) {
+        allFilled = false;
+      }
+    });
+
+    if (!allFilled) {
+      e.preventDefault(); // stop form submit
+      Swal.fire({
+        icon: "warning",
+        title: "Missing Fields",
+        text: "Please fill in all fields before saving!",
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "OK"
+      });
+    }
   });
-  html += `</tbody></table></div></div>`;
+}, 0);
+
 
   // Chart
   html += `<canvas id="${id}-chart" class="chart"></canvas>`;

@@ -94,3 +94,110 @@ tbody tr:hover{background:#f8fafc}
   box-shadow:0 12px 24px rgba(221,36,118,.35);transition:transform .08s ease
 }
 .login-btn:hover{transform:translateY(-1px)}
+
+
+
+.auth-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+
+.auth-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+
+.brand {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #2575fc;
+}
+
+
+.title {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+
+.input-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #555;
+}
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+.input-group input:focus {
+  border-color: #2575fc;
+}
+
+
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  background: #2575fc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.auth-btn:hover {
+  background: #1a5ad7;
+}
+
+.auth-text {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #666;
+}
+.auth-text a {
+  color: #2575fc;
+  text-decoration: none;
+  font-weight: bold;
+}
+.auth-text a:hover {
+  text-decoration: underline;
+}
+
+
+.input-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  background: white;
+  transition: border 0.3s;
+}
+.input-group select:focus {
+  border-color: #2575fc;
+}
